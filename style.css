@@ -1,0 +1,44 @@
+body{
+    margin: 0;
+}
+#background{
+    position: absolute;
+    bottom: 0;
+    background-image: url('img/t-rex-background.png');
+    background-repeat: repeat-x;
+    background-size: contain;
+    width: 100%;
+    height: 100vh;
+    animation: moveleft 3000s infinite linear;
+    -webkit-animation: moveleft 3000s infinite linear;
+}
+.bird{
+    position: absolute;
+    bottom: 200px;
+    background-image: url('./img/t-rex.png');
+    height: 60px;
+    width: 60px;
+}
+.pipe {
+    position: absolute;
+    bottom: 0;
+    background-image: url('./img/cacti.png');
+    background-size: contain;
+    width: 60px;
+}
+@keyframes moveleft {
+    from {
+        background-position: 70000%;
+    }
+    to{
+        background-position: 0%;
+    }
+}
+@-webkit-keyframes moveleft {
+    from {
+        background-position: 70000%;
+    }
+    to{
+        background-position: 0%;
+    }
+}
