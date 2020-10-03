@@ -5,9 +5,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const score = document.querySelector("#score");
   // console.log(bird.style);
 
-  let position = 200;
+  let position = 300;
   let points = 0;
-  let height = window.innerHeight + "px";
 
   let isGameOver = false;
   let isJumping = false;
@@ -50,7 +49,8 @@ document.addEventListener("DOMContentLoaded", () => {
     let timerId = setInterval(() => {
       if (isGameOver) {
         clearInterval(timerId);
-        alert.innerHTML = "Game Over";
+        alert.innerHTML = `Game Over. \n Final Score: ${points}`;
+        score.innerHTML = "";
         while (grid.firstChild) {
           grid.removeChild(grid.lastChild);
         }
@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
         bird.style.bottom = position + "px";
         if (
           bird.style.bottom === "0px" ||
-          bird.style.bottom === height
+          bird.style.bottom === (window.innerHeight + "px")
         ) {
           isGameOver = true;
         }

@@ -15,7 +15,7 @@ body{
 }
 .bird{
     position: absolute;
-    bottom: 200px;
+    bottom: 300px;
     background-image: url('./img/t-rex.png');
     height: 60px;
     width: 60px;
