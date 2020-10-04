@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function control(event) {
     // console.log(event);
-    if (event.keyCode === 38) {
+    if (event.keyCode === 32) {
       isJumping = true;
       jump();
     }
@@ -97,5 +97,5 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   generatePipe();
   fall();
-  document.addEventListener("keydown", control);
+  document.addEventListener("keypress", control);
 });
