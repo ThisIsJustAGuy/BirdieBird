@@ -5,33 +5,44 @@ body {
 .bird {
   position: absolute;
   bottom: 300px;
-  background-image: url("./img/t-rex.png");
-  height: 60px;
+  background-image: url("./img/flappy-bird.png");
+  height: 45px;
   width: 60px;
 }
 .pipe {
   position: absolute;
   bottom: 0;
-  background-image: url("./img/cacti.png");
-  background-size: contain;
+  background-image: url("./img/flappybird-pipe.png");
+  background-size: cover;
   width: 60px;
 }
 .pipe2{
   position: absolute;
   bottom: 0;
-  background-image: url("./img/cacti.png");
-  background-size: contain;
+  background-image: url("./img/flappybird-pipe.png");
+  background-size: cover;
   width: 60px;
   transform: rotate(180deg);
 }
 #background {
   position: absolute;
-  bottom: 0;
-  background-image: url("img/t-rex-background.png");
+  bottom: 50;
+  background-image: url("./img/fb-game-background.png");
   background-repeat: repeat-x;
-  background-size: cover;
+  background-size: contain;
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - 50px);
+  animation: moveleft 3000s infinite linear;
+  -webkit-animation: moveleft 3000s infinite linear;
+}
+#ground{
+  position: absolute;
+  bottom: 0;
+  background-image: url("./img/bottom-background.png");
+  background-repeat: repeat-x;
+  background-size: contain;
+  width: 100%;
+  height: 50px;
   animation: moveleft 3000s infinite linear;
   -webkit-animation: moveleft 3000s infinite linear;
 }
@@ -39,12 +50,13 @@ body {
   text-align: center;
 }
 #container {
-  background-image: url("img/t-rex-background.png");
-  background-size: cover;
+  background-image: url("./img/fb-game-background.png");
+  background-size: contain;
   position: absolute;
   height: 100vh;
   width: 100vw;
   text-align: center;
+  display: none;
 }
 #alert {
   text-align: center;
@@ -55,17 +67,17 @@ body {
 }
 @keyframes moveleft {
   from {
-    background-position: 0%;
+    background-position: 70000%;
   }
   to {
-    background-position: 270000%;
+    background-position: 0%;
   }
 }
 @-webkit-keyframes moveleft {
   from {
-    background-position: 0%;
+    background-position: 70000%;
   }
   to {
-    background-position: 270000%;
+    background-position: 0%;
   }
 }
