@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 <html lang="hu">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Birdie Bird</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<body>
+  <body>
+    <div id="container">
+      <h2 id="alert"></h2>
+      <button id="restart" onclick="location.reload()">Restart game</button>
+    </div>
     <div id="background">
-        <h3 id="score"></h3>
-        <h2 id="alert"></h2>
-        <div id="grid">
-            <div class="bird"></div>
-        </div>
+      <h3 id="score"></h3>
+      <div id="grid">
+        <div class="bird"></div>
+      </div>
     </div>
     <script src="app.js"></script>
-</body>
-
+  </body>
 </html>

@@ -2,7 +2,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const bird = document.querySelector(".bird");
   const grid = document.querySelector("#grid");
   const alert = document.querySelector("#alert");
-  const score = document.querySelector("#score");
+  const scroe = document.querySelector("#score");
+  const background = document.querySelector("#background");
   // console.log(bird.style);
 
   let position = 300;
@@ -35,6 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function generatePipe() {
     let pipePosition = 1200;
     let height = Math.random() * 400;
+    let height2 = document.documentElement.clientHeight - height - 200;
     const pipe = document.createElement("div");
     const pipe2 = document.createElement("div");
     grid.appendChild(pipe);
@@ -43,17 +45,18 @@ document.addEventListener("DOMContentLoaded", () => {
       pipe.classList.add("pipe");
       pipe2.classList.add("pipe");
       pipe.style.height = height + "px";
-      pipe2.style.height = window.innerHeight - height - 200 + "px";
+      pipe2.style.height = height2 + "px";
     }
 
     let timerId = setInterval(() => {
       if (isGameOver) {
         clearInterval(timerId);
         alert.innerHTML = `Game Over. \n Final Score: ${points}`;
-        score.innerHTML = "";
+        scroe.innerHTML = "";
         while (grid.firstChild) {
           grid.removeChild(grid.lastChild);
         }
+        background.style.display = "none";
       }
       pipePosition -= 10;
       pipe.style.left = pipePosition + "px";
@@ -64,24 +67,33 @@ document.addEventListener("DOMContentLoaded", () => {
         grid.removeChild(pipe2);
         score.innerHTML = ++points;
       }
+      if (
+        pipePosition >= 0 &&
+        pipePosition <= 60 &&
+        (parseFloat(bird.style.bottom) <= height ||
+          parseFloat(bird.style.bottom) >= height + 140)
+      ) {
+        isGameOver = true;
+      }
     }, 30);
     if (!isGameOver) {
       setTimeout(generatePipe, 1500);
     }
   }
   function fall() {
-      let fallID = setInterval(() => {
-        if (!isJumping) {
+    setInterval(() => {
+      if (!isJumping) {
         position -= 5;
         bird.style.bottom = position + "px";
         if (
-          bird.style.bottom === "0px" ||
-          bird.style.bottom === (window.innerHeight + "px")
+          parseInt(bird.style.bottom) <= 0 ||
+          parseInt(bird.style.bottom) + 60 >=
+            document.documentElement.clientHeight
         ) {
           isGameOver = true;
         }
       }
-      }, 20);
+    }, 20);
   }
   generatePipe();
   fall();
