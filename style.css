@@ -53,9 +53,19 @@ body {
   background-image: url("./img/fb-game-background.png");
   background-size: contain;
   position: absolute;
-  height: 100vh;
+  height: calc(100vh - 50px);
   width: 100vw;
   text-align: center;
+  display: none;
+}
+#containerGround{
+  position: absolute;
+  bottom: 0;
+  background-image: url("./img/bottom-background.png");
+  background-repeat: repeat-x;
+  background-size: contain;
+  width: 100%;
+  height: 50px;
   display: none;
 }
 #alert {

@@ -5,6 +5,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const score = document.querySelector("#score");
   const background = document.querySelector("#background");
   const container = document.querySelector("#container");
+  const ground = document.querySelector("#ground");
+  const containerGround = document.querySelector("#containerGround");
 
   let startTime = 0;
   let endTime = 0
@@ -105,7 +107,9 @@ document.addEventListener("DOMContentLoaded", () => {
     alert.innerHTML = `Game Over <br> Final Score: ${points}`;
     score.innerHTML = "";
     background.style.display = "none";
+    ground.style.display = "none";
     container.style.display = "block";
+    containerGround.style.display = "block";
   }
 
   generatePipe();
