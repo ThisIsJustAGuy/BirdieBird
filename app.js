@@ -60,13 +60,13 @@ document.addEventListener("DOMContentLoaded", () => {
       pipe.style.left = pipePosition + "px";
       pipe2.style.left = pipePosition + "px";
       pipe2.style.top = 0 + "px";
-      if (pipePosition === 0) {
+      if (pipePosition === -60) {
         grid.removeChild(pipe);
         grid.removeChild(pipe2);
         score.innerHTML = ++points;
       }
       if (
-        pipePosition >= 0 &&
+        pipePosition >= -60 &&
         pipePosition <= 60 &&
         (parseFloat(bird.style.bottom) <= height ||
           parseFloat(bird.style.bottom) >= height + 140)
@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
     scroe.innerHTML = "";
     background.style.display = "none";
   }
-  
+
   generatePipe();
   fall();
   document.addEventListener("keypress", control);
