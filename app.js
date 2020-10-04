@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let timerId = setInterval(() => {
       if (isGameOver) {
         clearInterval(timerId);
-        alert.innerHTML = `Game Over. \n Final Score: ${points}`;
+        alert.innerHTML = `Game Over <br> Final Score: ${points}`;
         scroe.innerHTML = "";
         while (grid.firstChild) {
           grid.removeChild(grid.lastChild);
