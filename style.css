@@ -23,6 +23,7 @@ body {
   background-size: cover;
   width: 60px;
   transform: rotate(180deg);
+  z-index: 1;
 }
 #background {
   position: absolute;
@@ -47,7 +48,9 @@ body {
   -webkit-animation: moveleft 3000s infinite linear;
 }
 #score {
+  position: relative;
   text-align: center;
+  z-index: 10;
 }
 #container {
   background-image: url("./img/fb-game-background.png");
