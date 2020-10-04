@@ -16,6 +16,14 @@ body {
   background-size: contain;
   width: 60px;
 }
+.pipe2{
+  position: absolute;
+  bottom: 0;
+  background-image: url("./img/cacti.png");
+  background-size: contain;
+  width: 60px;
+  transform: rotate(180deg);
+}
 #background {
   position: absolute;
   bottom: 0;

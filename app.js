@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
     grid.appendChild(pipe2);
     if (!isGameOver) {
       pipe.classList.add("pipe");
-      pipe2.classList.add("pipe");
+      pipe2.classList.add("pipe2");
       pipe.style.height = height + "px";
       pipe2.style.height = height2 + "px";
     }
