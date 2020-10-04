@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
       pipe.style.left = pipePosition + "px";
       pipe2.style.left = pipePosition + "px";
       pipe2.style.top = 0 + "px";
-      if (pipePosition < 0) {
+      if (pipePosition === 0) {
         grid.removeChild(pipe);
         grid.removeChild(pipe2);
         score.innerHTML = ++points;
