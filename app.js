@@ -71,14 +71,14 @@ document.addEventListener("DOMContentLoaded", () => {
         grid.removeChild(pipe2);
         score.innerHTML = ++points;
       }
-      // if (
-      //   pipePosition >= -60 &&
-      //   pipePosition <= 60 &&
-      //   (parseFloat(bird.style.bottom) <= height ||
-      //     parseFloat(bird.style.bottom) >= height + 155)
-      // ) {
-      //   isGameOver = true;
-      // }
+      if (
+        pipePosition >= -60 &&
+        pipePosition <= 60 &&
+        (parseFloat(bird.style.bottom) <= height ||
+          parseFloat(bird.style.bottom) >= height + 155)
+      ) {
+        isGameOver = true;
+      }
     }, 30);
     if (!isGameOver) {
       setTimeout(generatePipe, 1500);
