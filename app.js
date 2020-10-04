@@ -51,12 +51,10 @@ document.addEventListener("DOMContentLoaded", () => {
     let timerId = setInterval(() => {
       if (isGameOver) {
         clearInterval(timerId);
-        alert.innerHTML = `Game Over <br> Final Score: ${points}`;
-        scroe.innerHTML = "";
         while (grid.firstChild) {
           grid.removeChild(grid.lastChild);
         }
-        background.style.display = "none";
+        gameOver();
       }
       pipePosition -= 10;
       pipe.style.left = pipePosition + "px";
@@ -80,6 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
       setTimeout(generatePipe, 1500);
     }
   }
+
   function fall() {
     setInterval(() => {
       if (!isJumping) {
@@ -95,6 +94,13 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }, 20);
   }
+
+  function gameOver(){
+    alert.innerHTML = `Game Over <br> Final Score: ${points}`;
+    scroe.innerHTML = "";
+    background.style.display = "none";
+  }
+  
   generatePipe();
   fall();
   document.addEventListener("keypress", control);
