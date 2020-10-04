@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
         pipePosition >= -60 &&
         pipePosition <= 60 &&
         (parseFloat(bird.style.bottom) <= height ||
-          parseFloat(bird.style.bottom) >= height + 155)
+          parseFloat(bird.style.bottom) >= height + 110)
       ) {
         isGameOver = true;
       }
